@@ -16,6 +16,15 @@ phina.define('MainScene', {
   },
 });
 
+phina.define('Pizza', {
+  superClass: 'Sprite',
+  init: function(){
+    this.superInit('pizza', 128, 128);
+    this.x = SCREEN_WIDTH / 2;
+    this.y = SCREEN_HEIGHT / 2;
+  }
+});
+
 // メイン処理
 phina.main(function() {
   // アプリケーション生成
