@@ -1,6 +1,15 @@
 // phina.js をグローバル領域に展開
 phina.globalize();
 
+var ASSETS = {
+  image: {
+    player: './img/joucho_fuantei_man.png',
+    penguin: './img/penguin16_humboldt.png'
+  }
+};
+var SCREEN_WIDTH  = 465;
+var SCREEN_HEIGHT = 665;
+
 // MainScene クラスを定義
 phina.define('MainScene', {
   superClass: 'CanvasScene',
@@ -30,6 +39,9 @@ phina.main(function() {
   // アプリケーション生成
   var app = GameApp({
     startLabel: 'main', // メインシーンから開始する
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+    assets: ASSETS,
   });
   // アプリケーション実行
   app.run();
