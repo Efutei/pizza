@@ -33,7 +33,7 @@ phina.define('MainScene', {
 phina.define('Pizza', {
   superClass: 'Sprite',
   init: function(){
-    this.superInit('pizza', 128, 128);
+    this.superInit('pizza', 256, 256);
     this.x = SCREEN_WIDTH / 2;
     this.y = SCREEN_HEIGHT / 2;
     // タッチを有効にする
@@ -47,9 +47,6 @@ phina.define('Pizza', {
     },1000,"swing")
     .set({
       rotation: 0
-    })
-    .call(function() {
-      console.log("moved !!");
     });
   }
 });
