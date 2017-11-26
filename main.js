@@ -3,8 +3,7 @@ phina.globalize();
 
 var ASSETS = {
   image: {
-    player: './img/joucho_fuantei_man.png',
-    penguin: './img/penguin16_humboldt.png'
+    pizza: './img/pizza.png'
   }
 };
 var SCREEN_WIDTH  = 465;
@@ -12,7 +11,7 @@ var SCREEN_HEIGHT = 665;
 
 // MainScene クラスを定義
 phina.define('MainScene', {
-  superClass: 'CanvasScene',
+  superClass: 'DisplayScene',
   init: function() {
     this.superInit();
     // 背景色を指定
@@ -23,6 +22,8 @@ phina.define('MainScene', {
     this.label.y = this.gridY.center(); // y 座標
     this.label.fill = 'white'; // 塗りつぶし色
   },
+  update: function(){
+  }
 });
 
 phina.define('Pizza', {
