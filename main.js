@@ -17,10 +17,14 @@ phina.define('MainScene', {
     // 背景色を指定
     this.backgroundColor = '#444';
     // ラベルを生成
-    this.label = Label('Hello, phina.js!').addChildTo(this);
+    this.label = Label('Pizza').addChildTo(this);
     this.label.x = this.gridX.center(); // x 座標
     this.label.y = this.gridY.center(); // y 座標
     this.label.fill = 'white'; // 塗りつぶし色
+    this.pizza = Pizza().addChildTo(this);
+    this.pizza.onpointstart = function(){
+      this.rotate();
+    };
   },
   update: function(){
   }
@@ -32,6 +36,21 @@ phina.define('Pizza', {
     this.superInit('pizza', 128, 128);
     this.x = SCREEN_WIDTH / 2;
     this.y = SCREEN_HEIGHT / 2;
+    // タッチを有効にする
+    this.setInteractive(true);
+  },
+  rotate: function(){
+    this.tweener
+    .clear()
+    .to({
+      rotation: 360
+    },1000,"swing")
+    .set({
+      rotation: 0
+    })
+    .call(function() {
+      console.log("moved !!");
+    });
   }
 });
 
