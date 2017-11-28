@@ -19,7 +19,7 @@ phina.define('MainScene', {
     // ラベルを生成
     this.label = Label('Pizza').addChildTo(this);
     this.label.x = this.gridX.center(); // x 座標
-    this.label.y = this.gridY.center(); // y 座標
+    this.label.y = this.gridY.center(2); // y 座標
     this.label.fill = 'white'; // 塗りつぶし色
     this.pizza = Pizza().addChildTo(this);
     this.pizza.onpointstart = function(){
@@ -34,7 +34,7 @@ phina.define('MainScene', {
 phina.define('Pizza', {
   superClass: 'Sprite',
   init: function(){
-    this.superInit('pizza', 256, 256);
+    this.superInit('pizza', 512, 512);
     this.x = SCREEN_WIDTH / 2;
     this.y = SCREEN_HEIGHT / 2;
     // タッチを有効にする
@@ -44,7 +44,7 @@ phina.define('Pizza', {
     this.tweener
     .clear()
     .to({
-      rotation: 360
+      rotation: 1079
     },1500,"easeOutQuart")
     .set({
       rotation: 0
