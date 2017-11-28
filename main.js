@@ -24,6 +24,7 @@ phina.define('MainScene', {
     this.pizza = Pizza().addChildTo(this);
     this.pizza.onpointstart = function(){
       this.rotate();
+      this.setInteractive(false);
     };
   },
   update: function(){
@@ -44,9 +45,12 @@ phina.define('Pizza', {
     .clear()
     .to({
       rotation: 360
-    },1000,"swing")
+    },1500,"easeOutQuart")
     .set({
       rotation: 0
+    })
+    .call(function(){
+      this.target.setInteractive(true);
     });
   }
 });
