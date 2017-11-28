@@ -44,11 +44,19 @@ phina.define('Pizza', {
     this.tweener
     .clear()
     .to({
-      rotation: 1079
+      rotation: 1079,
+      y: 10,
+      scaleX: 0,
+      scaleY: 0
     },1500,"easeOutQuart")
     .set({
-      rotation: 0
+      rotation: 0,
+      y: SCREEN_HEIGHT / 2
     })
+    .to({
+      scaleX: 1,
+      scaleY: 1
+    },1000)
     .call(function(){
       this.target.setInteractive(true);
     });
