@@ -17,7 +17,7 @@ phina.define('MainScene', {
     // 背景色を指定
     this.backgroundColor = '#444';
     // ラベルを生成
-    this.label = Label('Pizza').addChildTo(this);
+    this.label = Label('ぴざ').addChildTo(this);
     this.label.x = this.gridX.center(); // x 座標
     this.label.y = this.gridY.center(2); // y 座標
     this.label.fill = 'white'; // 塗りつぶし色
