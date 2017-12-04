@@ -54,9 +54,17 @@ phina.define('Pizza', {
       y: SCREEN_HEIGHT / 2
     })
     .to({
+      scaleX: 3,
+      scaleY: 3
+    },100)
+    .to({
+      scaleX: 0.5,
+      scaleY: 0.5
+    },100)
+    .to({
       scaleX: 1,
       scaleY: 1
-    },1000)
+    },200)
     .call(function(){
       this.target.setInteractive(true);
     });
