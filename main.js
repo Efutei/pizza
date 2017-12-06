@@ -15,12 +15,14 @@ phina.define('MainScene', {
   init: function() {
     this.superInit();
     // 背景色を指定
-    this.backgroundColor = '#444';
+    this.backgroundColor = '#68F';
     // ラベルを生成
     this.label = Label('Pizza').addChildTo(this);
     this.label.x = this.gridX.center(); // x 座標
     this.label.y = this.gridY.center(2); // y 座標
     this.label.fill = 'white'; // 塗りつぶし色
+    this.label.fontSize = 64;
+    this.label.fontFamily = 'Shrikhand';
     this.pizza = Pizza().addChildTo(this);
     this.pizza.onpointstart = function(){
       this.rotate();
@@ -54,9 +56,17 @@ phina.define('Pizza', {
       y: SCREEN_HEIGHT / 2
     })
     .to({
+      scaleX: 3,
+      scaleY: 3
+    },100)
+    .to({
+      scaleX: 0.5,
+      scaleY: 0.5
+    },100)
+    .to({
       scaleX: 1,
       scaleY: 1
-    },1000)
+    },200)
     .call(function(){
       this.target.setInteractive(true);
     });
