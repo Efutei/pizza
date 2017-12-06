@@ -17,12 +17,12 @@ phina.define('MainScene', {
     // 背景色を指定
     this.backgroundColor = '#68F';
     // ラベルを生成
-    this.label = Label('ぴざ').addChildTo(this);
+    this.label = Label('Pizza').addChildTo(this);
     this.label.x = this.gridX.center(); // x 座標
     this.label.y = this.gridY.center(2); // y 座標
     this.label.fill = 'white'; // 塗りつぶし色
-    this.label.scaleX = 2;
-    this.label.scaleY = 2;
+    this.label.fontSize = 64;
+    this.label.fontFamily = 'Shrikhand';
     this.pizza = Pizza().addChildTo(this);
     this.pizza.onpointstart = function(){
       this.rotate();
